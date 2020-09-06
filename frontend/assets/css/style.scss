@@ -1,0 +1,29 @@
+// Demo
+// ====================================
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+html,body{height:100%;}body{font-family: 'Open Sans'; display:flex;flex-direction:column;align-items:center; justify-content:center;width:100%;text-align:center;}html{background:#C6538B;}
+
+
+// Required Styles
+// ====================================
+
+$select-arrow: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDQ4IDQ4IiB3aWR0aD0iNDgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTE0LjgzIDE2LjQybDkuMTcgOS4xNyA5LjE3LTkuMTcgMi44MyAyLjgzLTEyIDEyLTEyLTEyeiIvPjxwYXRoIGQ9Ik0wLS43NWg0OHY0OGgtNDh6IiBmaWxsPSJub25lIi8+PC9zdmc+';
+$select-padding: 10px;
+$select-size: 60%;
+
+select {
+  border-radius: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  padding: $select-padding;
+  width: $select-size;
+
+  // Allows us to use a custom arrow and avoid
+  // the browsers that don't support it.
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    background-image: url(#{$select-arrow});
+    background-position: right 0 top 50%; // better way to background-position
+    background-repeat: no-repeat;
+  }
+}
